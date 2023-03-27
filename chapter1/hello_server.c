@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
-#include <arpa/inet.h>
+#include <unistd.h>    //unistd.h 中所定义的接口通常都是大量针对系统调用的封装
+#include <arpa/inet.h> //主要是信息转换
 #include <sys/socket.h>
 void error_handling(char *message);
 int main(int argc, char *argv[])
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     serv_addr.sin_family = AF_INET;
     // htonl 无符号长整形 本机字节顺序转换为网络字节 即大端模式(big-endian)
     serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
-    //无符号短整型数值转换为网络字节序
+    // 无符号短整型数值转换为网络字节序
     serv_addr.sin_port = htons(atoi(argv[1]));
     if (bind(serv_sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) == -1)
     {
@@ -49,8 +49,9 @@ int main(int argc, char *argv[])
     close(serv_sock);
     return 0;
 }
-void error_handling(char *message){
-    fputs(message,stderr);
-    fputc('\n',stderr);
+void error_handling(char *message)
+{
+    fputs(message, stderr);
+    fputc('\n', stderr);
     exit(1);
 }
