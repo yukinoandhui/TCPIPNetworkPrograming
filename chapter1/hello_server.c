@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
     }
     // 绑定信息后，准备连接，也就是进入可接收请求状态
     if (listen(serv_sock, 5) == -1) {
-        error_handling("listen() error");
+        error_handling("listen() error");//listen不会阻塞
     }
     clnt_addr_size = sizeof(clnt_addr);
     //收到消息后，accept接收消息
