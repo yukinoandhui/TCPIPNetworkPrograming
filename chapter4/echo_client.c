@@ -39,8 +39,8 @@ int main(int argc, char* argv[])
          * 若把其数据拷贝到数组里面，那是无边界的，因为分不清从哪里才是分割线。
          * 
         */
-        write(sock,message,strlen(message));
-        str_len=read(sock,message,BUF_SIZE-1);
+        write(sock,message,strlen(message));//多次调用write可能会一次性传送到服务器
+        str_len=read(sock,message,BUF_SIZE-1);//这里就是一个常见的错误，认为会以字符串为单位执行IO操作，但是数据如果很大
         message[str_len]=0;
         printf("Message from server: %s",message);
         
