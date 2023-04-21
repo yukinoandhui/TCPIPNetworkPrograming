@@ -4,6 +4,7 @@
         "inet.h": "c",
         "unistd.h": "c",
         "types.h": "c",
-        "fcntl.h": "c"
+        "fcntl.h": "c",
+        "netdb.h": "c"
     }
 }
