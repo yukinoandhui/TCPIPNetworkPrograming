@@ -5,6 +5,10 @@
         "unistd.h": "c",
         "types.h": "c",
         "fcntl.h": "c",
-        "netdb.h": "c"
+        "netdb.h": "c",
+        "signal.h": "c",
+        "stdio.h": "c",
+        "sigaction.h": "c",
+        "wait.h": "c"
     }
 }
