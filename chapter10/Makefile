@@ -1,4 +1,4 @@
-CXX = g++
+CXX = gcc
 SRC = $(wildcard *.c )
 SRCPP = $(wildcard *.cpp)
 OBJ_C = $(patsubst %.c,%.o,$(SRC))
